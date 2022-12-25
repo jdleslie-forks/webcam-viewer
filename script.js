@@ -1,7 +1,8 @@
 console.log("Use deviceId query param to request a specific device.");
 
-navigator.mediaDevices
-  .getUserMedia({video: true, audio: true})
+await navigator.mediaDevices.getUserMedia({video: true, audio: true});
+
+navigator.mediaDevices  
   .enumerateDevices()
   .then((devices) =>
     devices.filter((d) => d.kind === "videoinput" || d.kind === "audioinput")
